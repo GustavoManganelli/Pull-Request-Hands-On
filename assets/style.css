@@ -1,0 +1,114 @@
+/* Estado inicial Preto e Branco */
+:root {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --card-bg: #2a2a2a;
+    --card-border: #444;
+  }
+  
+  /* Temas específicos para o body quando ativados pelo JS */
+  body.theme-fred {
+    --bg-color: #0b5394; /* Azul Fred */
+    --text-color: #ffffff;
+  }
+  
+  body.theme-daphne {
+    --bg-color: #7f64c2; /* Roxo Daphne */
+    --text-color: #f3f3f3;
+  }
+  
+  body.theme-velma {
+    --bg-color: #c28442; /* Laranja Velma */
+    --text-color: #ffffff;
+  }
+  
+  body.theme-salsicha {
+    --bg-color: #495718; /* Mostarda/Marrom claro */
+    --text-color: #d9ead3;
+  }
+  
+  body.theme-scooby {
+    --bg-color: #8b4513; /* Marrom Scooby */
+    --text-color: #ffffff; /* Ciano da coleira */
+  }
+  
+  /* Transição suave do fundo e das cores */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* Dá um ar de máquina de escrever/mistério clássico */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    width: 200px;
+    border-radius: 20px;
+    height: 354px;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 1000px;
+    padding: 2rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 0px #000;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .member {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    padding: 20px;
+    width: 500px;
+    height:  440px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    filter: grayscale(100%); /* Mantém o PB */
+  }
+  
+  .member h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--card-border);
+    padding-bottom: 10px;
+    transition: border-color 0.3s ease;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Efeito ao passar o mouse NO PRÓPRIO card */
+  .member:hover {
+    transform: translateY(-10px);
+    filter: grayscale(0%); /* Tira o tom de cinza do card em si se houvesse imagem */
+  }
+
+  /* Vamos brincar com as cores dos cards ao focar */
+  body.theme-fred .member[data-theme="fred"] { border-color: #fff; background-color: rgba(106, 180, 226); }
+  body.theme-daphne .member[data-theme="daphne"] { border-color: #9f4500; background-color: rgb(67, 43, 130); }
+  body.theme-velma .member[data-theme="velma"] { border-color: #990000; background-color: rgb(156, 91, 22); }
+  body.theme-salsicha .member[data-theme="salsicha"] { border-color: #efdd3a; background-color: rgb(34, 77, 15); }
+  body.theme-scooby .member[data-theme="scooby"] { border-color: #fff200; background-color: rgb(64, 190, 190); }
