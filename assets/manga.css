@@ -1,0 +1,46 @@
+header{
+    display:flex;
+    width: 97%;
+    background-color:rgb(55, 115, 175);
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    a:link, a:visited, a:hover, a:active{
+        color:white;
+        text-decoration:none;
+    }
+}
+body{
+    background-color:rgb(205, 224, 255);
+}
+.trailer-img{
+    display:flex;
+    flex-direction: row; 
+    gap: 15px;
+    justify-content: center; 
+    flex-wrap: wrap;
+    background-color:rgb(55, 115, 175);
+}
+.trailer-img figure{
+    margin: 0;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.trailer-img figure img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
+#personagem{
+    display:flex;
+    flex-direction: row; 
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color:rgb(55, 115, 175);
+}
